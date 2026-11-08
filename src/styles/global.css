@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-ink font-sans text-white antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    overflow-x: hidden;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-gold2;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-5; }
+  .eyebrow { @apply mb-3 block font-display text-xs uppercase tracking-[0.3em] text-gold; }
+  .h2 { @apply font-display text-3xl font-bold uppercase leading-tight sm:text-5xl; }
+  .gold-line { @apply my-5 h-0.5 w-16 bg-gradient-to-r from-gold to-transparent; }
+}
